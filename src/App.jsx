@@ -54,9 +54,9 @@ function App() {
           </Col>
         </Row>
       </Container>
-      <Container>
-        <Row>
-          <Col xs={12} className="mx-6 d-flex justify-content-between">
+      <Container fluid>
+        <Row className="justify-content-center">
+          <Col xs={12} sm={11} className="mx-6 d-flex justify-content-between">
             <input
               type="text"
               placeholder="Search for a country..."
