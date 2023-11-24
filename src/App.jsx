@@ -10,7 +10,7 @@ function App() {
   const [searchFilter, setSearchFilter] = useState("");
 
   useEffect(() => {
-    fetch("./data/data.json")
+    fetch("http://localhost:3000/Flags-api-react/data/data.json")
       .then((response) => response.json())
       .then((data) => {
         doRegionFilter(regionFilter, doSearchFilter(searchFilter, data));
@@ -54,20 +54,16 @@ function App() {
           </Col>
         </Row>
       </Container>
-      <Container fluid>
+      <Container>
         <Row>
-          <Col className="px-5 mx-3">
+          <Col xs={12} className="mx-6 d-flex justify-content-between">
             <input
-              style={{ padding: "10px 20px", fontSize: "1.3em" }}
               type="text"
               placeholder="Search for a country..."
               value={searchFilter}
               onChange={(e) => setSearchFilter(e.target.value)}
             />
-          </Col>
-          <Col xs={2}>
             <select
-              style={{ padding: "5px 10px", fontSize: "1.3em" }}
               value={regionFilter}
               onChange={(e) => setRegionFilter(e.target.value)}
             >
@@ -86,7 +82,7 @@ function App() {
           {countries
             ? countries.map((entry) => {
                 return (
-                  <Col xs={3} className="my-5">
+                  <Col className="my-5" xs={12} md={6} lg={4} xl={3}>
                     <Col
                       className="mb-2"
                       style={{
