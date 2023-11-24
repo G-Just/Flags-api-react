@@ -10,7 +10,7 @@ function App() {
   const [searchFilter, setSearchFilter] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:3000/Flags-api-react/data/data.json")
+    fetch("http://localhost:3000/data/data.json")
       .then((response) => response.json())
       .then((data) => {
         doRegionFilter(regionFilter, doSearchFilter(searchFilter, data));
